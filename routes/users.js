@@ -12,5 +12,6 @@ router.get('/login', (req, res) => {
       res.send('User Register Succesfull');
       });
     
+      module.exports = router;
 
       

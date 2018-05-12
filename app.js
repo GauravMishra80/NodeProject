@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -29,6 +30,9 @@ const port = 5000;
 //Body Parser MiddleWare
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+// Set Public Folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Method Override Middleware
 app.use(methodOverride('_method'));
